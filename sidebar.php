@@ -66,10 +66,10 @@
                         <a class="collapse-item" href="Central&Nairobi.php">Central & Nairobi</a>
                         <a class="collapse-item" href="coast.php">Coast</a>
                         <a class="collapse-item" href="eastern.php">Eastern</a>
-                        <a class="collapse-item" href="cards.html">North Eastern</a>
-                        <a class="collapse-item" href="cards.html">North Rift</a>
+                        <a class="collapse-item" href="NorthEastern.php">North Eastern</a>
+                        <a class="collapse-item" href="NorthRift.php">North Rift</a>
                         <a class="collapse-item" href="south_rift.php">South Rift</a>
-                        <a class="collapse-item" href="cards.html">Nyanza</a>
+                        <a class="collapse-item" href="nyanza.php">Nyanza</a>
                         <a class="collapse-item" href="western.php">Western</a>
                     </div>
                 </div>
@@ -198,4 +198,20 @@
                 </nav>
                 <!-- End of Topbar -->
             </div>
+            <!-- Bootstrap core JavaScript-->
+ <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
         

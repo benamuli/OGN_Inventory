@@ -7,15 +7,31 @@ include_once("sidebar.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coast</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.1.2/css/buttons.dataTables.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css">
+    <title>South Rift OGN Links</title>
 
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- DataTables Buttons JS and Dependencies -->
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+    <!-- pdfmake for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 </head>
 
 <body>
     <div class="row">
-        <div class="col-md-12 my-2 ">
+        <div class="col-md-12 my-2">
             <table id="example" class="table table-bordered table-light">
                 <thead>
                     <tr>
@@ -29,7 +45,6 @@ include_once("sidebar.php");
                 <tbody>
                     <?php
                     $sql = 'SELECT * FROM south_rift';
-
                     $results = mysqli_query($con, $sql);
 
                     while ($row = mysqli_fetch_assoc($results)) {
@@ -39,53 +54,58 @@ include_once("sidebar.php");
                         $Scope = $row['Scope'];
                         $Distance = $row['Distance'];
                         echo '<tr>
-       <th scope="row">' . $id . '</th>
-       <td>' . $Region . '</td>
-       <td>' . $Contractor . '</td>
-       <td>' . $Scope . '</td>
-       <td>' . $Distance . '</td>
-     </tr>';
+                            <th scope="row">' . $id . '</th>
+                            <td>' . $Region . '</td>
+                            <td>' . $Contractor . '</td>
+                            <td>' . $Scope . '</td>
+                            <td>' . $Distance . '</td>
+                         </tr>';
                     }
-
                     ?>
-
                 </tbody>
             </table>
         </div>
     </div>
-    <script src="https://cdn.datatables.net/buttons/3.1.2/js/dataTables.buttons.js
-"></script>
-    <script src="https://cdn.datatables.net/buttons/3.1.2/js/buttons.dataTables.js
-"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js
-"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js
-"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js
-"></script>
-    <script src="https://cdn.datatables.net/buttons/3.1.2/js/buttons.html5.min.js
-"></script>
-    <script src="https://cdn.datatables.net/buttons/3.1.2/js/buttons.print.min.js
-"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js
-"></script>
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
     <script>
-        new DataTable('#example');
+        // $(document).ready(function() {
+        //     $('#example').DataTable({
+        //         dom: 'Bfrtip',
+        //         buttons: [
+        //             'copy', 'csv', 'excel', 'pdf', 'print'
+        //         ]
+        //     });
+        // });
     </script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                dom: 'Bfrtip',
+                buttons: [{
+                        extend: 'copy',
+                        title: 'South Rift OGN Links ' // Custom title
+                    },
+                    {
+                        extend: 'csv',
+                        title: 'South Rift OGN Links' // Custom title
+                    },
+                    {
+                        extend: 'excel',
+                        title: 'South Rift OGN Links' // Custom title
+                    },
+                    {
+                        extend: 'pdf',
+                        title: 'South Rift OGN Links' // Custom title for PDF
+                    },
+                    {
+                        extend: 'print',
+                        title: 'South Rift OGN Links' // Custom title for print
+                    }
+                ]
+            });
+        });
+    </script>
+
+</body>
+
+</html>
